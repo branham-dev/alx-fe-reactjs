@@ -4,7 +4,7 @@ const Navbar = () => {
 	return (
 		<>
 			<header>
-				<nav style={{}}>
+				<nav style={{ backgroundColor: "lightgrey" }}>
 					<ul style={{ listStyleType: "none", display: "flex", gap: "1rem", justifyContent: "center" }}>
 						<li>
 							<Link to={"/"}>Home</Link>
