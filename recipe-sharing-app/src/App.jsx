@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Router, Routes } from "react-router-dom";
 import "./App.css";
 import AddRecipeForm from "./components/AddRecipeForm";
 import RecipeList from "./components/RecipeList";
@@ -7,7 +7,8 @@ import EditRecipeForm from "./components/EditRecipeForm";
 
 function App() {
 	return (
-		<>
+        <>
+            <Router></Router>
 			<Routes>
 				<Route
 					path='/'
