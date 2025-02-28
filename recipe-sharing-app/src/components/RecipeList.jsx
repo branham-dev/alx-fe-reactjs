@@ -13,7 +13,7 @@ const RecipeList = () => {
 					<div key={recipe.id}>
 						<h3>{recipe.title}</h3>
 						<p>{recipe.description}</p>
-						<Link to={`details/${recipe.id}`}>
+						<Link to={`/details/${recipe.id}`}>
 							<button>Details</button>
 						</Link>
 					</div>
@@ -28,7 +28,7 @@ const RecipeList = () => {
 				<div key={recipe.id}>
 					<h3>{recipe.title}</h3>
 					<p>{recipe.description}</p>
-					<Link to={`details/${recipe.id}`}>
+					<Link to={`/details/${recipe.id}`}>
 						<button>Details</button>
 					</Link>
 				</div>
