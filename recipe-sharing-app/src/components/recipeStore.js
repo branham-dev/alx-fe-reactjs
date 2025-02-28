@@ -10,6 +10,21 @@ const useRecipeStore = create((set) => ({
 		})),
 	deleteRecipe: (id) =>
 		set((state) => ({ recipes: state.recipes.filter((recipe) => recipe.id !== id) })),
+	searchTerm: "",
+	setSearchTerm: (term) =>
+		set((state) => ({
+			searchTerm: term,
+			filteredRecipes: state.recipes.filter((recipe) =>
+				recipe.title.toLowerCase().includes(term.toLowerCase()),
+			),
+		})),
+	filteredRecipes: [],
+	filterRecipes: () =>
+		set((state) => ({
+			filteredRecipes: state.recipes.filter((recipe) =>
+				recipe.title.toLowerCase().includes(state.searchTerm.toLowerCase()),
+			),
+		})),
 }));
 
 export default useRecipeStore;
