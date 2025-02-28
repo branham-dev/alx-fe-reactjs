@@ -27,7 +27,7 @@ const RecipeDetails = () => {
 			{/* Render EditRecipeForm and DeleteRecipeButton here */}
 			<div>
 				<button onClick={() => navigate(`/details/${recipe.id}/edit`)}>Edit</button>
-				<DeleteRecipeButton deleteRecipe={deleteRecipe} id={Number(recipeId)} />
+				<DeleteRecipeButton id={Number(recipeId)} />
 			</div>
 		</div>
 	);
