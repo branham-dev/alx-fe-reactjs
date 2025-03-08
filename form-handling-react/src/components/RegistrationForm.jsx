@@ -6,6 +6,7 @@ const RegistrationForm = () => {
 	const [username, setUsername] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [errors, setErrors] = useState({});
 
 	const handleChange = (e) => {
 		const { name, value } = e;
@@ -16,11 +17,27 @@ const RegistrationForm = () => {
 		}));
 	};
 
+	const validate = () => {
+		const errors = {};
+
+		if (!username) {
+			errors.username = "Required";
+		}
+		if (!email) {
+			errors.email = "Required";
+		}
+		if (!password) {
+			errors.password = "Required";
+		}
+		return errors;
+	};
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		setErrors(validate());
 
-		if (formData.username && formData.email && formData.password) {
-			alert("submitted");
+		if (Object.keys(errors).length === 0) {
+			alert("Submitted");
 		}
 	};
 
