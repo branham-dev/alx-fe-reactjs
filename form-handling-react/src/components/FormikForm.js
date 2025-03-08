@@ -1,7 +1,7 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 
-const FormikForm = () => {
+const formikForm = () => {
 	// const validate = (values) => {
 	// 	const errors = {};
 
@@ -118,4 +118,4 @@ const FormikForm = () => {
 	// 	</form>
 	// );
 };
-export default FormikForm;
+export default formikForm;
