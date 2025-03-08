@@ -44,7 +44,7 @@ const formikForm = () => {
 		<Formik
 			initialValues={{ username: "", email: "", password: "" }}
 			validationSchema={Yup.object({
-				username: Yup.string().max(15, "Must be 15 characters or less").required("Required"),
+				username: Yup.string().required("Required"),
 				email: Yup.string().email("Invalid email address").required("Required"),
 				password: Yup.string().min(8, "Must be al least 8 characters long").required("Required"),
 			})}
@@ -67,7 +67,8 @@ const formikForm = () => {
 
 				<button type='submit'>Submit</button>
 			</Form>
-		</Formik>
+        </Formik>
+        // .max(15, "Must be 15 characters or less")
 	);
 
 	// return (
