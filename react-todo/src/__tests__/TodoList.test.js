@@ -19,6 +19,12 @@ test("adds a new todo", () => {
 
 test("toggles todo completion", () => {
 	render(<TodoList />);
+	const input = screen.getByRole("textbox");
+	const addButton = screen.getByText("Add");
+
+	fireEvent.change(input, { target: { value: "Learn React" } });
+	fireEvent.click(addButton);
+
 	const task = screen.getByText("Learn React");
 
 	fireEvent.click(task);
@@ -30,6 +36,12 @@ test("toggles todo completion", () => {
 
 test("deletes a todo", () => {
 	render(<TodoList />);
+	const input = screen.getByRole("textbox");
+	const addButton = screen.getByText("Add");
+
+	fireEvent.change(input, { target: { value: "Learn React" } });
+	fireEvent.click(addButton);
+
 	const deleteButton = screen.getAllByText("X")[0];
 
 	fireEvent.click(deleteButton);
