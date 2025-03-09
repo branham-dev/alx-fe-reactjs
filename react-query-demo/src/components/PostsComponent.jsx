@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 
 const PostsComponent = () => {
@@ -12,14 +12,14 @@ const PostsComponent = () => {
 	// 	fetchData();
 	// }, []);
 
-	const { isPending, error, data } = useQuery({
+	const { isLoading, isError, data } = useQuery({
 		queryKey: ["posts"],
 		queryFn: () => fetch("https://jsonplaceholder.typicode.com/posts").then((res) => res.json()),
 	});
 
-	if (isPending) return <div>Loading...</div>;
+	if (isLoading) return <div>Loading...</div>;
 
-	if (error) return <div>An error has occurred: {error.message}</div>;
+	if (isError) return <div>An error has occurred: {isError.message}</div>;
 
 	return (
 		<div>
