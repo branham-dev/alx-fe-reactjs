@@ -1,5 +1,6 @@
 // import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { fetchPosts } from "../functions/fetchPosts";
 
 const PostsComponent = () => {
 	// const fetchData = async () => {
@@ -14,7 +15,7 @@ const PostsComponent = () => {
 
 	const { isLoading, isError, data } = useQuery({
 		queryKey: ["posts"],
-		queryFn: () => fetch("https://jsonplaceholder.typicode.com/posts").then((res) => res.json()),
+		queryFn: fetchPosts,
 	});
 
 	if (isLoading) return <div>Loading...</div>;
