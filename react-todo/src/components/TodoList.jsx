@@ -1,4 +1,5 @@
 import { useState } from "react";
+import AddTodoForm from "./AddTodoForm";
 
 const initialTodos = [
 	{ id: 1, text: "Learn React", completed: false },
@@ -22,38 +23,22 @@ export default function TodoList() {
 
 	return (
 		<div>
-			<h2>Todo List</h2>
-			<AddTodoForm addTodo={addTodo} />
+			<h1>Todo List</h1>
+			<AddTodoForm onAddTodo={addTodo} />
 			<ul>
 				{todos.map((todo) => (
-					<li key={todo.id}>
-						<span
-							onClick={() => toggleTodo(todo.id)}
-							style={{ textDecoration: todo.completed ? "line-through" : "none" }}>
-							{todo.text}
-						</span>
-						<button onClick={() => deleteTodo(todo.id)}>X</button>
+					<li key={todo.id} onClick={() => toggleTodo(todo.id)}>
+						<span style={{ textDecoration: todo.completed ? "line-through" : "none" }}>{todo.text}</span>
+						<button
+							onClick={(e) => {
+								e.stopPropagation();
+								deleteTodo(todo.id);
+							}}>
+							X
+						</button>
 					</li>
 				))}
 			</ul>
 		</div>
-	);
-}
-
-function AddTodoForm({ addTodo }) {
-	const [text, setText] = useState("");
-
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		if (!text.trim()) return;
-		addTodo(text);
-		setText("");
-	};
-
-	return (
-		<form onSubmit={handleSubmit}>
-			<input type='text' value={text} onChange={(e) => setText(e.target.value)} />
-			<button type='submit'>Add</button>
-		</form>
 	);
 }
