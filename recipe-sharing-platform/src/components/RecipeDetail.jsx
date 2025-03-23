@@ -20,9 +20,8 @@ const RecipeDetail = () => {
 					<p>{recipe.summary}</p>
 					<img src={recipe.image} alt='recipe' />
 
-					<h2>Ingredients</h2>
+					<h2>ingredients</h2>
 					<h2>instructions</h2>
-					{/* <h2>Ingredients</h2> */}
 				</article>
 			</div>
 		</>
