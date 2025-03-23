@@ -18,7 +18,7 @@ const HomePage = () => {
 			<header className='bg-[url(./assets/images/home-recipe.jpg)] w-full min-h-[40vh] sm:min-h-[60vh]  bg-cover bg-no-repeat'>
 				Hello
 			</header>
-			<section className='w-full flex flex-col items-center mt-12 gap-8'>
+			<section className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center mt-12 gap-8'>
 				{recipes.map((recipe) => (
 					<article
 						key={recipe.id}
