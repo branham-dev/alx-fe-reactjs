@@ -1,5 +1,5 @@
 import data from "../data.json";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const HomePage = () => {
 	// const fetchRecipes = async () => {
@@ -7,10 +7,10 @@ const HomePage = () => {
 	// 	const data = response.json();
 	// 	console.log(data);
 	// };
-
+	const [recipes, setRecipes] = useState([]);
 	useEffect(() => {
 		// fetchRecipes();
-		console.log(data);
+		setRecipes(data);
 	}, []);
 
 	return (
@@ -19,7 +19,7 @@ const HomePage = () => {
 				Hello
 			</header>
 			<section className='w-full flex flex-col items-center mt-12 gap-8'>
-				{data.map((recipe) => (
+				{recipes.map((recipe) => (
 					<article
 						key={recipe.id}
 						className='py-6 px-4 bg-[#eee5da] rounded-md text-[#262424] w-[80%] hover:shadow-lg'>
