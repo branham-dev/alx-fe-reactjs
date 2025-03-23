@@ -34,6 +34,7 @@ const HomePage = () => {
 						<Link to={`/recipe/${recipe.id}`}>Details</Link>
 					</article>
 				))}
+				<button onClick={() => navigate("/form")}>Add Recipe</button>
 			</section>
 		</>
 	);
