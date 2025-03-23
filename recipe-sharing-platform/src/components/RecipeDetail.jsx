@@ -15,7 +15,7 @@ const RecipeDetail = () => {
 	return (
 		<>
 			<div className='text-center mt-16'>
-				<article className='bg-[#262424] w-[75%] m-auto py-8 px-6 text-[#eee5da]'>
+				<article className='bg-[#262424] w-[75%] m-auto py-8 px-6 text-[#eee5da] font-sans shadow-md'>
 					<h1 className='text-2xl mb-4'>{recipe.title}</h1>
 					<p>{recipe.summary}</p>
 					<img src={recipe.image} alt='recipe' />
