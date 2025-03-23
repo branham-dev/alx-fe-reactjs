@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import data from "../data.json";
 import { useEffect, useState } from "react";
 
@@ -26,10 +26,12 @@ const HomePage = () => {
 					<article
 						key={recipe.id}
 						className='py-6 px-4 bg-[#eee5da] rounded-md text-[#262424] w-[80%] hover:shadow-lg'
-						onClick={() => navigate(`/recipe/${recipe.id}`)}>
+						// onClick={() => navigate(`/recipe/${recipe.id}`)}
+					>
 						<img src={recipe.image} alt='recipe' />
 						<h2 className=' text-2xl'>{recipe.title}</h2>
 						<p>{recipe.summary}</p>
+						<Link to={`/recipe/${recipe.id}`}>Details</Link>
 					</article>
 				))}
 			</section>
