@@ -10,6 +10,7 @@ export const fetchUserData = async (username) => {
 		const { data } = response;
 		console.log(data);
 		state.loading = false;
+		return data;
 	} catch (error) {
 		state.error = true;
 		console.log(error);
