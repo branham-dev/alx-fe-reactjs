@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchUsers } from "../services/githubService";
-import SearchForm from "./SearchForm";
+import SearchForm from "./Search";
 
 const Layout = () => {
 	const navigate = useNavigate();
