@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { fetchUserData } from "../services/githubService";
 
 const SearchForm = ({ onSearch }) => {
 	const [username, setUsername] = useState("");
@@ -9,6 +10,10 @@ const SearchForm = ({ onSearch }) => {
 		e.preventDefault();
 		onSearch({ username, location, minRepos });
 	};
+
+	useEffect(() => {
+		fetchUserData();
+	}, []);
 
 	return (
 		<form onSubmit={handleSubmit} className='bg-white p-4 rounded shadow-md w-full max-w-lg mx-auto'>
