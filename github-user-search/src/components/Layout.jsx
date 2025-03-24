@@ -1,6 +1,10 @@
+import Search from "./Search";
+
 const Layout = () => {
-  return (
-    <div>Layout</div>
-  )
-}
-export default Layout
+	return (
+		<main>
+			<Search />
+		</main>
+	);
+};
+export default Layout;
