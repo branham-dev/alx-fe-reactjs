@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { fetchUsers } from "../services/githubService";
+import { fetchUserData } from "../services/githubService";
 
 const UserProfile = () => {
 	const { username } = useParams();
@@ -14,7 +14,7 @@ const UserProfile = () => {
 			setError("");
 
 			try {
-				const userData = await fetchUsers(username);
+				const userData = await fetchUserData(username);
 				setUser(userData);
 			} catch (err) {
 				setError(err.message);

@@ -11,10 +11,6 @@ const SearchForm = ({ onSearch }) => {
 		onSearch({ username, location, minRepos });
 	};
 
-	useEffect(() => {
-		fetchUserData();
-	}, []);
-
 	return (
 		<form onSubmit={handleSubmit} className='bg-white p-4 rounded shadow-md w-full max-w-lg mx-auto'>
 			<div className='mb-4'>

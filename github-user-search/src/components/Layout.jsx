@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { fetchUsers } from "../services/githubService";
+
 import SearchForm from "./Search";
+import { fetchUserData } from "../services/githubService";
 
 const Layout = () => {
 	const navigate = useNavigate();
@@ -16,7 +17,7 @@ const Layout = () => {
 		setError("");
 
 		try {
-			const data = await fetchUsers({ ...params, page });
+			const data = await fetchUserData({ ...params, page });
 			setUsers(data.items);
 			setTotalResults(data.total_count);
 		} catch (err) {
