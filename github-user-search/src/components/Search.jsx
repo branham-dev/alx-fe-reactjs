@@ -53,3 +53,5 @@ const SearchForm = ({ onSearch }) => {
 };
 
 export default SearchForm;
+
+"async", "await", "map", "&&";
